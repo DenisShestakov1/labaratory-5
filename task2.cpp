@@ -15,12 +15,12 @@ int main() {
         array[j][i - 1] = Counter;
         Counter++;
     }
-    for (int y = N - 2; y >= 0; y--) {
-        array[j - 1][y] = Counter;
+    for (int i = N - 2; i >= 0; i--) {
+        array[j - 1][i] = Counter;
         Counter++;
     }
-    for (int x = 0; x <= N - 2; x++) {
-        array[1][x] = Counter;
+    for (int i = 0; i <= N - 2; i++) {
+        array[1][i] = Counter;
         Counter++;
     }
     for (int i = 0; i < N; i++) {
@@ -31,4 +31,3 @@ int main() {
         std::cout << '\n';
     }
 
-}
