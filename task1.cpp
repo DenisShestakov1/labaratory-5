@@ -2,21 +2,31 @@
 #include <math.h>
 #include <stdio.h>
  
-void outputArray();
+void output();
 void mathogidanie(int* arr);
 void dispersion(int* arr, double mathogidanie);
 void standardDeviation(int* arr, double mathogidanie);
 void normalisation(int* arr, double mathogidanie);
 
 int main() {
-	outputArray();
+
+	output();
+
+	double arr[10];
+	for (int count = 0; count < 10; count++) {
+
+		double user_input;
+		std::cout << "enter number - ";
+		std::cin >> user_input;
+		arr[count] = user_input;
+	}
 }
 
-void outputArray() {
-	
-	int arrayNumbers[10];
+void output() {
+	const int arrLength = 10;
+	int arrayNumbers[arrLength];
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < arrLength; i++) {
 		std::cin >> arrayNumbers[i];
 
 	}
@@ -34,7 +44,9 @@ void outputArray() {
 	dispersion(arr, mathogidanie);
 	standardDeviation(arr, mathogidanie);
 	normalisation(arr, mathogidanie);
+
 }
+
 
  void dispersion(int* arr, double mathogidanie) {
 	 double dispersion = 0;
@@ -46,15 +58,15 @@ void outputArray() {
 	 std::cout << '\n' << "dispersion " << dispersion << '/n';
 
  }
- void standardDeviation(int* arr, double mathExpectation) {
+ void standardDeviation(int* arr, double mathogidanie) {
 	 double deviation = 0;
 	 for (int i = 0; i < 10; i++) {
-		 deviation += pow(arr[i] - mathExpectation, 2);
+		 deviation += pow(arr[i] - mathogidanie, 2);
 	 }
 	 deviation = sqrt(deviation / 10);
 	 std::cout << '\n'<< "Deviation: " << deviation << '\n';
  }
- void normalisation(int* arr, double mathExpectation) {
+ void normalisation(int* arr, double mathogidanie) {
 	 double normalisation;
 	 double max = arr[0];
 	 double min = arr[0];
@@ -63,6 +75,21 @@ void outputArray() {
 		 if (min > arr[i]) min = arr[i];
 
 	 }
-	 normalisation = (mathExpectation - min) / (max - min);
-	 std::cout << '\n' << "Normalisation: " << normalisation;
+	 normalisation = (mathogidanie - min) / (max - min);
+	 std::cout << '\n' << "Normalisation: " << normalisation << '\n';
+ }
+ void threesigm(double mathogidanie, double dispersion) {
+	 double choice;
+	 double sigma_up = mathogidanie + 3 * pow(dispersion, 0.5);
+	 double sigma_dawn = mathogidanie - 3 * pow(dispersion, 0.5);
+	 std::cout << "enter number - ";
+	 std::cin >> choice;
+
+	 if (sigma_up > choice && choice > sigma_dawn) {
+		 std::cout << "this number falls under the 3 sigma rule";
+	 }
+	 else {
+		 std::cout << "this number does not fall under the 3 sigma rule";
+
+	 }
  }
