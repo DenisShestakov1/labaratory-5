@@ -13,10 +13,10 @@ int main() {
 }
 
 void outputArray() {
-	const int arrLength = 10;
-	int arrayNumbers[arrLength];
+	
+	int arrayNumbers[10];
 
-	for (int i = 0; i < arrLength; i++) {
+	for (int i = 0; i < 10; i++) {
 		std::cin >> arrayNumbers[i];
 
 	}
