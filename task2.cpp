@@ -1,33 +1,33 @@
 #include <iostream>
 #define N 3
 int main() {
-     
-    int case = 1;
+
+    int cases = 1;
     int j = 1;
     int i = 0;
-    int array[N][N];
+    int arr[N][N];
 
     for (i; i < N; i++) {
-        array[0][i] = case;
-        case++;
+        arr[0][i] = cases;
+        cases++;
     }
     for (j; j < N; j++) {
-        array[j][i - 1] = case;
-        case++;
+        arr[j][i - 1] = cases;
+        cases++;
     }
     for (int i = N - 2; i >= 0; i--) {
-        array[j - 1][i] = case;
-        case++;
+        arr[j - 1][i] = cases;
+        cases++;
     }
     for (int i = 0; i <= N - 2; i++) {
-        array[1][i] = case;
-        case++;
+        arr[1][i] = cases;
+        cases++;
     }
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            std::cout << array[i][j] ;
+            std::cout << arr[i][j];
 
         }
         std::cout << '\n';
     }
-
+}
