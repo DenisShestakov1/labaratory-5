@@ -35,16 +35,7 @@ void output() {
 
 }
  void mathogidanie(int*arr) {
-	double mathogidanie = 0;
-	for (int i = 0; i < 10; i++) {
-		mathogidanie += arr[i];
-	}
-	mathogidanie /= 10;
-	std::cout << "mathogidanie " << mathogidanie << '/n';
-	dispersion(arr, mathogidanie);
-	standardDeviation(arr, mathogidanie);
-	normalisation(arr, mathogidanie);
-
+	
 }
 
 
@@ -54,8 +45,7 @@ void output() {
 		 dispersion = pow(arr[i] - mathogidanie, 2);
 
 	 }
-	 dispersion = sqrt(dispersion / 9);
-	 std::cout << '\n' << "dispersion " << dispersion << '/n';
+	 
 
  }
  void standardDeviation(int* arr, double mathogidanie) {
@@ -75,13 +65,11 @@ void output() {
 		 if (min > arr[i]) min = arr[i];
 
 	 }
-	 normalisation = (mathogidanie - min) / (max - min);
 	 std::cout << '\n' << "Normalisation: " << normalisation << '\n';
  }
  void threesigm(double mathogidanie, double dispersion) {
 	 double choice;
-	 double sigma_up = mathogidanie + 3 * pow(dispersion, 0.5);
-	 double sigma_dawn = mathogidanie - 3 * pow(dispersion, 0.5);
+	
 	 std::cout << "enter number - ";
 	 std::cin >> choice;
 
